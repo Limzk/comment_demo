@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.name{
+    text-align: right;
+}
+.text{
+    height: 400px;
+    width: 1024px;
+    margin: 0px auto;
+    padding: 40px;
+}
+.text .show{
+    font-weight: bold;
+    font-size: 20px;
+    color: royalblue;
+}
+.comment ul{
+    list-style: none;
+}
+.comment ul li{
+    width:100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.comment ul:first-child{
+    border-top: 1px solid black;
+}
+.comment ul:last-child{
+    border-bottom: 1px solid black;
+}
+.comment ul li p{
+    margin-top: 10px;
+    width: 100%;
+}
+.comment ul li span:last-child{
+    float: right;
+}
+.text  form .form-control{
+    resize: none;
+}
+.text form .btn{
+    width: 100px;
+    margin: 20px auto;
+    display: table;
+}

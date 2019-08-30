@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.content{
+    height: 400px;
+    width: 1024px;
+    margin: 30px auto;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+    padding: 40px;
+}
+.content .form-group .help-block{
+    margin-top: 10px;
+    font-weight: 700;
+}
+.content .form-control{
+    border-color: #3c763d;
+}
+.content textarea{
+    resize: none;
+}
+.content .btn{
+    width: 190px;
+    display: table;
+    margin: 20px auto;
+}

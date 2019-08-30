@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.content ul{
+    margin-top: 40px;
+    list-style: none;
+}
+.content ul li{
+    height: 50px;
+    text-indent: 2em;
+    border: 1px black solid;
+}
+.content ul li a{
+    text-decoration: none;
+    line-height: 50px;
+
+}
+.content ul:first-child{
+    border-top: 1px black solid;
+}
+.content ul:last-child{
+    border-bottom: 1px black solid;
+}
+.footer .pagination{
+    margin: 0px auto;
+    display: table;
+}
+.footer .btn{
+    width: 160px;
+    margin: 20px auto;
+    display: table;
+}

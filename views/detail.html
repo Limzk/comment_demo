@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="../public/css/detail.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="header">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">首页</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        {{ if user }}
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!-- 根据seesion存储状态，获得用户名-->
+                            <li><a href="javascript:;">当前登陆：{{ user.recordset[0].username}}</a></li>
+                            <li><a href="logout">退出</a></li>
+                        </ul>
+                        {{ else }}
+                    </li>
+                    <li><a href="/login">登录</a></li>
+                    <li><a href="/register">注册</a></li>
+                    {{ /if }}
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<div class="text">
+     <div class="essay">
+         <div class="topic">
+             <h2>{{ msg[0].topic }}</h2>
+         </div>
+         <div class="content">
+             <h6>{{ msg[0].content }}</h6>
+         </div>
+         <div class="name">
+             发布者：{{ msg[0].name }}
+         </div>
+     </div>
+     <hr>
+     <p class="show">评论区</p>
+     <div class="comment">
+         <ul>
+             {{ each commentList as value}}
+             <li>
+                 <p>{{ value.comment }}</p>
+                 <span>{{ value.date }}</span>
+                 <span>用户:{{ value.username }}</span>
+             </li>
+             {{ /each }}
+         </ul>
+     </div>
+     <hr>
+    {{ if user }}
+     <form method="post" action="/comment">
+         <textarea class="form-control" rows="6" name="text_comment"></textarea>
+         <input type="submit" value="发表评论" class="btn btn-info"/>
+     </form>
+    {{ /if }}
+ </div>
+</body>
+</html>
